@@ -30,7 +30,7 @@ const pool = mysql.createPool({
 //Root endpoint: return all countries
 app.get("/", (req, res) => {
   console.log("/ endpoint was hit 🎯");
-  pool.query("SELECT * FROM country LIMIT 10", (err, result) => {
+  pool.query("SELECT * FROM country LIMIT 20", (err, result) => {
     if (err) return console.log(err);
     // res.send(result);
     return res.status(200).json(result);
