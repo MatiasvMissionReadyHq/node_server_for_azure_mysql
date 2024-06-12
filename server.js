@@ -9,7 +9,13 @@ const cors = require("cors");
 const app = express();
 
 / ========== Middleware ============= /
-app.use(cors());  // accepts requests from anywhere
+// app.use(cors());  // accepts requests from anywhere
+
+const corsOptions = {
+  origin: "http://localhost:5174"
+};
+
+app.use(cors(corsOptions));
 
 //app.use(cors({ origin: process.env.CLIENT_HOST }));
 
