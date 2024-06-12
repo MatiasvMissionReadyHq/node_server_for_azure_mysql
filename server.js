@@ -9,7 +9,9 @@ const cors = require("cors");
 const app = express();
 
 / ========== Middleware ============= /
-app.use(cors());  // accepts requests from anywhere
+// app.use(cors());  // accepts requests from anywhere
+
+app.use(cors({ origin: process.env.CLIENT_HOST }));
 
 //create a connection to the database using connection pools- this keeps the connection open and allows people to queue
 const pool = mysql.createPool({
