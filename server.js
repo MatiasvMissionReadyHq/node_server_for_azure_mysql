@@ -3,7 +3,13 @@ const mysql = require("mysql2");
 const fs = require("fs");
 require("dotenv").config();
 
+
+const cors = require("cors");
+
 const app = express();
+
+/ ========== Middleware ============= /
+app.use(cors());  // accepts requests from anywhere
 
 //create a connection to the database using connection pools- this keeps the connection open and allows people to queue
 const pool = mysql.createPool({
