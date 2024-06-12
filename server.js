@@ -30,7 +30,8 @@ app.get("/", (req, res) => {
   console.log("/ endpoint was hit 🎯");
   pool.query("SELECT * FROM country", (err, result) => {
     if (err) return console.log(err);
-    res.send(result);
+    // res.send(result);
+    return res.status(200).json(result);
   });
 });
 
